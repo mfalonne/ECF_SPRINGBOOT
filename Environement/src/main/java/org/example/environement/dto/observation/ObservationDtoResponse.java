@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.environement.dto.specie.SpecieDtoResponse;
-import org.example.environement.dto.travelLog.TravellogDtoResponse;
+import org.example.environement.dto.travellog.TravellogDtoResponse;
 
 import java.time.LocalDate;
 import java.util.List;

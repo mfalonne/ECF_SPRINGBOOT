@@ -1,8 +1,8 @@
 package org.example.environement.controller;
 
-import org.example.environement.dto.travelLog.TravellogDtoResponse;
-import org.example.environement.dto.travelLog.TravellogDtoStat;
-import org.example.environement.service.TravellogsService;
+import org.example.environement.dto.travellog.TravellogDtoResponse;
+import org.example.environement.dto.travellog.TravellogDtoStat;
+import org.example.environement.service.TravellogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,24 +16,24 @@ import java.util.Map;
 @RequestMapping("/api/travellog")
 public class TravellogController {
 
-    private final TravellogsService travellogsService;
+    private final TravellogService travellogService;
 
-    public TravellogController(TravellogsService travellogsService) {
-        this.travellogsService = travellogsService;
+    public TravellogController(TravellogService travellogService) {
+        this.travellogService = travellogService;
     }
 
     @GetMapping
     public ResponseEntity<List<TravellogDtoResponse>> getAllTravellogs (){
-        return ResponseEntity.ok(travellogsService.get(10));
+        return ResponseEntity.ok(travellogService.get(10));
     }
 
     @GetMapping("/stats/{id}")
     public ResponseEntity<TravellogDtoStat> getStatFromObseration (@PathVariable long id){
-        return ResponseEntity.ok(travellogsService.getStat(id));
+        return ResponseEntity.ok(travellogService.getStat(id));
     }
 
     @GetMapping("/user/{name}")
     public ResponseEntity<Map<String, TravellogDtoStat>> getTravelStatForUserOnLAstMonth (@PathVariable String name){
-        return ResponseEntity.ok(travellogsService.getStatForUserLastMonth(name));
+        return ResponseEntity.ok(travellogService.getStatForUserLastMonth(name));
     }
 }

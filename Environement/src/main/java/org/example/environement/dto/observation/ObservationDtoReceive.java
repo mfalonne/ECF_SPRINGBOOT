@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.environement.dto.travelLog.TravellogDtoReceive;
+import org.example.environement.dto.travellog.TravellogDtoReceive;
 import org.example.environement.entity.Observation;
 import org.example.environement.exception.NotFoundException;
 import org.example.environement.repository.SpecieRepository;

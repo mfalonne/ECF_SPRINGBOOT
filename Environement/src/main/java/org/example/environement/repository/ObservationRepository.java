@@ -1,8 +1,10 @@
 package org.example.environement.repository;
 
 import org.example.environement.entity.Observation;
+import org.example.environement.entity.Travellog;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ObservationRepository extends JpaRepository<Observation, Long> {
@@ -12,4 +14,7 @@ public interface ObservationRepository extends JpaRepository<Observation, Long> 
 
     // Trouver les observations par ID de l'espèce
     List<Observation> findObservationBySpecieId(Long specieId);
+
+    List<Observation> findByUsernameAndDateBetween(String username, LocalDate startDate, LocalDate endDate);
+
 }

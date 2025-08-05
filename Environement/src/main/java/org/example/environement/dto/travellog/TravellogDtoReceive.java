@@ -1,4 +1,4 @@
-package org.example.environement.dto.travelLog;
+package org.example.environement.dto.travellog;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

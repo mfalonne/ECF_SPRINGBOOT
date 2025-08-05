@@ -1,4 +1,4 @@
-package org.example.environement.dto.travelLog;
+package org.example.environement.dto.travellog;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,6 +14,12 @@ public class TravellogDtoStat {
     private double totalDistanceKm;
     private double totalEmissionsKg;
     private Map<String,Double> byMode;
+
+    public TravellogDtoStat(double totalDistanceKm, double totalEmissionsKg, Map<String, Double> byMode) {
+        this.totalDistanceKm = totalDistanceKm;
+        this.totalEmissionsKg = totalEmissionsKg;
+        this.byMode = byMode;
+    }
 
     public TravellogDtoStat() {
         totalDistanceKm = 0;

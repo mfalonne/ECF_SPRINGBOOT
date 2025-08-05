@@ -2,7 +2,7 @@ package org.example.environement.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.example.environement.dto.travelLog.TravellogDtoResponse;
+import org.example.environement.dto.travellog.TravellogDtoResponse;
 import org.example.environement.entity.enums.TravelMode;
 
 @Entity
@@ -41,6 +41,7 @@ public class Travellog {
         };
         this.estimatedCo2Kg = this.distanceKm * emissionFactor;
     }
+
 
     public TravellogDtoResponse entityToDto() {
         return TravellogDtoResponse.builder()

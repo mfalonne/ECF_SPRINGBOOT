@@ -17,4 +17,5 @@ public interface TravellogRepository extends JpaRepository<Travellog, Long> {
 //    public List<Travellog> findTravellogByUserForLastMonth (String user, LocalDate date);
 
     List<Travellog> findByObservationId(Long observationId);
+
 }
